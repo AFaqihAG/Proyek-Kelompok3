@@ -16,10 +16,11 @@ int main()
 
     fclose(fpr);
 
+    
     char *string[3];
     char username[20], password[20];
     int ctrl = 0;
-
+    
     string[0] = strtok(akun, "@");
     while(string[ctrl++] != NULL){
         string[ctrl] = strtok(NULL, "@");
