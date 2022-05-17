@@ -14,7 +14,7 @@ int main()
     fclose(fpw);
     
 	//Check existance file
-    if((fpr = fopen("database/Login.bin", "rb+")) == NULL){
+    if((fpr = fopen("database/Login.bin", "rb")) == NULL){
         printf("Gagal membuka file!");
         return EXIT_FAILURE;
     }
