@@ -13,7 +13,7 @@ int main()
     fwrite(login, sizeof(char), sizeof(login)/sizeof(char), fpw);
     fclose(fpw);
     
-    //Check existance file
+	//Check existance file
     if((fpr = fopen("database/Login.bin", "rb+")) == NULL){
         printf("Gagal membuka file!");
         return EXIT_FAILURE;
