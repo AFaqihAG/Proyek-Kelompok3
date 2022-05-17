@@ -5,13 +5,17 @@
 int main()
 {    
     FILE *fpr;
+    char login[20] = "Kelompok3@1234abcd";
+    char akun[20];
     
-    if((fpr = fopen("database/Login.bin", "rb"))== NULL){
+    //Check existance file
+    if((fpr = fopen("database/Login.bin", "rb+")) == NULL){
         printf("Gagal membuka file!");
         return EXIT_FAILURE;
     }
-
-    char akun[20];
+  	
+	//Writing & Reading username/password
+    fwrite(login, sizeof(char), sizeof(login)/sizeof(char), fpr);
     fread(akun, sizeof(char), sizeof(akun)/sizeof(char), fpr);
 
     fclose(fpr);
@@ -21,6 +25,8 @@ int main()
     int ctrl = 0;
     
     string[0] = strtok(akun, "@");
+	
+	//Getting username/password from bin file
     while(string[ctrl++] != NULL){
         string[ctrl] = strtok(NULL, "@");
     }
