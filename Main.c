@@ -9,7 +9,7 @@ int main()
     char akun[20];
 	
 	//writing username/password
-    fpw = fopen("login.bin", "wb");
+    fpw = fopen("database/login.bin", "wb");
     fwrite(login, sizeof(char), sizeof(login)/sizeof(char), fpw);
     fclose(fpw);
     
