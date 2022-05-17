@@ -4,9 +4,14 @@
 
 int main()
 {    
-    FILE *fpr;
+    FILE *fpr, *fpw;
     char login[20] = "Kelompok3@1234abcd";
     char akun[20];
+	
+	//writing username/password
+    fpw = fopen("login.bin", "wb");
+    fwrite(login, sizeof(char), sizeof(login)/sizeof(char), fpw);
+    fclose(fpw);
     
     //Check existance file
     if((fpr = fopen("database/Login.bin", "rb+")) == NULL){
@@ -14,8 +19,7 @@ int main()
         return EXIT_FAILURE;
     }
   	
-	//Writing & Reading username/password
-    fwrite(login, sizeof(char), sizeof(login)/sizeof(char), fpr);
+	//Reading username/password
     fread(akun, sizeof(char), sizeof(akun)/sizeof(char), fpr);
 
     fclose(fpr);
