@@ -6,8 +6,8 @@ int main()
 {    
     FILE *fpr;
     
-    if((fpr = fopen("database/login.bin", "rb"))== NULL){
-        printf("gagal membuka file !");
+    if((fpr = fopen("database/Login.bin", "rb"))== NULL){
+        printf("Gagal membuka file!");
         return EXIT_FAILURE;
     }
 
@@ -15,7 +15,6 @@ int main()
     fread(akun, sizeof(char), sizeof(akun)/sizeof(char), fpr);
 
     fclose(fpr);
-
     
     char *string[3];
     char username[20], password[20];
