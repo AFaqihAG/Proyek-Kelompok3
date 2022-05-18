@@ -57,7 +57,6 @@ int main( int argc, char *argv[] )
         return EXIT_FAILURE;
 	}
 
-	
-	printf("Anda menjawab %d pertanyaan dengan benar", nilai);
+
     return EXIT_SUCCESS;
 }
