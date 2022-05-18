@@ -2,9 +2,10 @@
 #include<stdlib.h>
 #include<string.h>
 
-int main()
+int main( int argc, char *argv[] )
 {    
-    FILE *fpr, *fpw, nilai = 0;
+    FILE *fpr, *fpw; 
+    int nilai = 0;
     char login[20] = "Kelompok3@1234abcd";
     char akun[20];
 	
@@ -25,7 +26,7 @@ int main()
     fclose(fpr);
     
     char *string[3];
-    char username[20], password[20];
+    char username[20], password[20], username_input[20], password_input[20];
     int ctrl = 0;
     
     string[0] = strtok(akun, "@");
@@ -38,8 +39,18 @@ int main()
     strcpy(username, string[0]);
     strcpy(password, string[1]);
 
-    printf("Username : %s\nPassword : %s", username, password);
+    strcpy(username_input, argv[1]);
+    strcpy(password_input, argv[2]);	
 	
+    if( (strcmp(username, username_input) == 0) && (strcmp(password, password_input) == 0) )
+	    {
+	    printf("selamat anda berhasil login");
+	    }
+	    else
+	    {
+	    printf("anda gagal login");
+	    }
+
 	
 	printf("Anda menjawab %d pertanyaan dengan benar", nilai);
     return 0;
