@@ -4,7 +4,7 @@
 
 int main()
 {    
-    FILE *fpr, *fpw;
+    FILE *fpr, *fpw, nilai = 0;
     char login[20] = "Kelompok3@1234abcd";
     char akun[20];
 	
@@ -39,6 +39,8 @@ int main()
     strcpy(password, string[1]);
 
     printf("Username : %s\nPassword : %s", username, password);
-
+	
+	
+	printf("Anda menjawab %d pertanyaan dengan benar", nilai);
     return 0;
 }
